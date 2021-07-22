@@ -23,7 +23,7 @@ addon_info = {
 	"addon_summary": _("Ignore blanks Indentation Reporting"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description": _("Variant of indentation reporting where blank lines don't have an impact."),
+	"addon_description": _("Variant of indentation reporting that reduces irrelevant information when reading source code for most programming languages."),
 	# version
 	"addon_version": "0.1",
 	# Author(s)
