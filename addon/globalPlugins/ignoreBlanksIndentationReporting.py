@@ -1,5 +1,7 @@
 # ignore blanks in indentation reporting
-# author: Samuel Kacer
+# Copyright (C) 2021 Samuel Kacer
+#GNU GENERAL PUBLIC LICENSE V2
+# author: Samuel Kacer <samuel.kacer@gmail.com>
 
 import globalPluginHandler
 import speech.speech
