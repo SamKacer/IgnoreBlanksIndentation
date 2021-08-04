@@ -333,7 +333,7 @@ def monkeyPatchedGetTextInfoSpeech(
 					relativeSpeechSequence.append(LangChangeCommand(newLanguage))
 					lastLanguage=newLanguage
 
-	isNotBlank = any(isinstance(t, str) and not t in ("", "\n") for t in textWithFields)
+	isNotBlank = any(isinstance(t, str) and not t in ("", "\n", "\r\n") for t in textWithFields)
 	if reportIndentation and speakTextInfoState and isNotBlank and allIndentation!=speakTextInfoState.indentationCache:
 		indentationSpeech=getIndentationSpeech(allIndentation, formatConfig)
 		if autoLanguageSwitching and speechSequence[-1].lang is not None:
