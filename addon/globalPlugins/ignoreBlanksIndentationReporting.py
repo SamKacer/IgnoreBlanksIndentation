@@ -21,11 +21,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 originalGetTextInfoSpeech = speech.speech.getTextInfoSpeech
 
 
+LINE_END_CHARS = { '\r', '\n' }
+
 from speech.speech import *
 # same as original except this line:
 # if reportIndentation and speakTextInfoState and allIndentation!=speakTextInfoState.indentationCache:
 # is replaced by:
-# isNotBlank = any(isinstance(t, str) and not t in ("", "\n") for t in textWithFields)
+# isNotBlank = ...
 # if reportIndentation and speakTextInfoState and isNotBlank and allIndentation!=speakTextInfoState.indentationCache:
 # essentially also checks if the line of text isn't blank when deciding whether to recompute indentation speech and update the allIndentation cache
 def monkeyPatchedGetTextInfoSpeech(
@@ -333,7 +335,7 @@ def monkeyPatchedGetTextInfoSpeech(
 					relativeSpeechSequence.append(LangChangeCommand(newLanguage))
 					lastLanguage=newLanguage
 
-	isNotBlank = any(isinstance(t, str) and not t in ("", "\n", "\r\n") for t in textWithFields)
+	isNotBlank = any(isinstance(t, str) and not all(c in LINE_END_CHARS for c in t) for t in textWithFields)
 	if reportIndentation and speakTextInfoState and isNotBlank and allIndentation!=speakTextInfoState.indentationCache:
 		indentationSpeech=getIndentationSpeech(allIndentation, formatConfig)
 		if autoLanguageSwitching and speechSequence[-1].lang is not None:
