@@ -25,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("Variant of indentation reporting that reduces irrelevant information when reading source code for most programming languages."),
 	# version
-	"addon_version": "0.1-rc3",
+	"addon_version": "0.1",
 	# Author(s)
 	"addon_author": "Samuel Kacer <samuel.kacer@gmail.com>",
 	# URL for the add-on documentation support
