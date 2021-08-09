@@ -24,6 +24,7 @@ originalGetTextInfoSpeech = speech.speech.getTextInfoSpeech
 LINE_END_CHARS = { '\r', '\n' }
 
 from speech.speech import *
+from speech.speech import _extendSpeechSequence_addMathForTextInfo
 # same as original except this line:
 # if reportIndentation and speakTextInfoState and allIndentation!=speakTextInfoState.indentationCache:
 # is replaced by:
