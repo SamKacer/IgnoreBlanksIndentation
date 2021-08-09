@@ -2,7 +2,7 @@
 
 * Author: Samuel Kacer
 * NVDA compatibility: 2021.1
-* Download [stable version](https://github.com/SamKacer/IgnoreBlanksIndentation/releases/download/v0.1/ignoreBlanksIndentationReporting-0.1.nvda-addon)
+* Download [stable version](https://github.com/SamKacer/IgnoreBlanksIndentation/releases/download/v0.2/ignoreBlanksIndentationReporting-0.2.nvda-addon)
 
 This is an NVDA addon that alters the reporting of indentation by disregarding blank lines when deciding whether to report changes in indentation. It is best understood by contrasting with normal behaviour with an example.
 
