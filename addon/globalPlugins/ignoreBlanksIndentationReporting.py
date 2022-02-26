@@ -4,6 +4,7 @@
 # author: Samuel Kacer <samuel.kacer@gmail.com>
 # https://github.com/SamKacer/IgnoreBlanksIndentation.git
 
+from buildVersion import version_year, version_major, version_minor
 import globalPluginHandler
 import speech.speech
 
@@ -31,7 +32,7 @@ from speech.speech import _extendSpeechSequence_addMathForTextInfo
 # isNotBlank = ...
 # if reportIndentation and speakTextInfoState and isNotBlank and allIndentation!=speakTextInfoState.indentationCache:
 # essentially also checks if the line of text isn't blank when deciding whether to recompute indentation speech and update the allIndentation cache
-def monkeyPatchedGetTextInfoSpeech(
+def monkeyPatched_2021_1_GetTextInfoSpeech(
 		info: textInfos.TextInfo,
 		useCache: Union[bool, SpeakTextInfoState] = True,
 		formatConfig: Dict[str, bool] = None,
@@ -398,3 +399,6 @@ def monkeyPatchedGetTextInfoSpeech(
 	yield speechSequence
 	return True
 
+nvda_version = (version_year, version_major, version_minor)
+if nvda_version >= (2021, 1, 0):
+	monkeyPatchedGetTextInfoSpeech = monkeyPatched_2021_1_GetTextInfoSpeech
