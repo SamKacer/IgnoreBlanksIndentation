@@ -1,8 +1,8 @@
 # Ignore Blanks Indentation Reporting 
 
 * Author: Samuel Kacer
-* NVDA compatibility: 2021.1
-* Download [stable version](https://github.com/SamKacer/IgnoreBlanksIndentation/releases/download/v0.2/ignoreBlanksIndentationReporting-0.2.nvda-addon)
+* NVDA compatibility: 2021.1 and beyond
+* Download [stable version](https://github.com/SamKacer/IgnoreBlanksIndentation/releases/download/v0.3/ignoreBlanksIndentationReporting-0.3.nvda-addon)
 
 This is an NVDA addon that alters the reporting of indentation by disregarding blank lines when deciding whether to report changes in indentation. It is best understood by contrasting with normal behaviour with an example.
 
@@ -46,7 +46,7 @@ no indent def bar():
 ### version 0.3
 
 * support NVDA version 2021.3+
-* tested with NVDA 2022.1
+* tested compatibility with NVDA 2022.1
 
 ### version 0.2
 
