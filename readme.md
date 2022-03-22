@@ -46,6 +46,7 @@ no indent def bar():
 ### version 0.3
 
 * support NVDA version 2021.3+
+* tested with NVDA 2022.1
 
 ### version 0.2
 
