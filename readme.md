@@ -2,7 +2,7 @@
 
 * Author: Samuel Kacer
 * NVDA compatibility: 2021.1 and beyond
-* Download [stable version](https://github.com/SamKacer/IgnoreBlanksIndentation/releases/download/v0.4/ignoreBlanksIndentationReporting-0.5.nvda-addon)
+* Download [stable version](https://github.com/SamKacer/IgnoreBlanksIndentation/releases/download/v0.5/ignoreBlanksIndentationReporting-0.5.nvda-addon)
 
 ## Notice: From NVDA v2023.3 onwards, this functionality is available in NVDA natively and can be toggled on in Document Formatting settings under "Ignore blank lines for line indentation reporting"
 
