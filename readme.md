@@ -2,9 +2,11 @@
 
 * Author: Samuel Kacer
 * NVDA compatibility: 2021.1 and beyond
-* Download [stable version](https://github.com/SamKacer/IgnoreBlanksIndentation/releases/download/v0.4/ignoreBlanksIndentationReporting-0.4.nvda-addon)
+* Download [stable version](https://github.com/SamKacer/IgnoreBlanksIndentation/releases/download/v0.4/ignoreBlanksIndentationReporting-0.5.nvda-addon)
 
-This is an NVDA addon that alters the reporting of indentation by disregarding blank lines when deciding whether to report changes in indentation. It is best understood by contrasting with normal behaviour with an example.
+## Notice: From NVDA v2023.3 onwards, this functionality is available in NVDA natively and can be toggled on in Document Formatting settings under "Ignore blank lines for line indentation reporting"
+
+Thi s is an NVDA addon that alters the reporting of indentation by disregarding blank lines when deciding whether to report changes in indentation. It is best understood by contrasting with normal behaviour with an example.
 
 Consider this example:
 
@@ -42,6 +44,9 @@ no indent def bar():
 ```
 
 ## Change log
+
+### v0.5
+* support for NVDA v 2023.3 onwards (note: since this NVDA version, this addon is obsolete)
 
 ### v0.4
 * support NVDA version 2022.3+, including 2023.1
