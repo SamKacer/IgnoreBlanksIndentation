@@ -7,19 +7,33 @@
 from buildVersion import version_year, version_major, version_minor
 import globalPluginHandler
 import speech.speech
+import config
+
+nvda_version = (version_year, version_major, version_minor)
+# from NVDA v2023.3 this is a built-in, connfigurable feature
+useConfig = nvda_version >= (2023, 3, 0)
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self, *args, **kwargs):
 		super(GlobalPlugin, self).__init__(*args, **kwargs)
-		speech.speech.getTextInfoSpeech = monkeyPatchedGetTextInfoSpeech
+		if useConfig:
+			config.conf['documentFormatting']['ignoreBlankLinesForRLI'] = True
+		else:
+			speech.speech.getTextInfoSpeech = monkeyPatchedGetTextInfoSpeech                                        
 
 
 	def terminate(self):
-		speech.speech.getTextInfoSpeech = originalGetTextInfoSpeech
+		if useConfig:
+			config.conf['documentFormatting']['ignoreBlankLinesForRLI'] = originalIgnoreBlankLinesValue
+		else:
+			speech.speech.getTextInfoSpeech = originalGetTextInfoSpeech                                             
 
 
 # save original to restore during termination
-originalGetTextInfoSpeech = speech.speech.getTextInfoSpeech
+if useConfig:
+	originalIgnoreBlankLinesValue = config.conf['documentFormatting']['ignoreBlankLinesForRLI']
+else:
+	originalGetTextInfoSpeech = speech.speech.getTextInfoSpeech
 
 
 LINE_END_CHARS = { '\r', '\n' }
@@ -1508,7 +1522,6 @@ def monkeyPatched_2023_1_getTextInfoSpeech(  # noqa: C901
 	return True
 
 
-nvda_version = (version_year, version_major, version_minor)
 if nvda_version >= (2023, 1, 0):
 	monkeyPatchedGetTextInfoSpeech = monkeyPatched_2023_1_getTextInfoSpeech
 elif nvda_version >= (2022, 3, 0):
